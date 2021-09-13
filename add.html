@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Add Movie</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<!--NavBar-->
+<nav class="navbar navbar-light bg-light" >
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Show<b>Trackr</b></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="index.html">Home</a></li>
+
+      <li><a href="add.html">Add</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="signup.html"> Sign Up</a></li>
+      <li><a href="login.html"> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<section class="mysec " id="gallery">
+  <div class="container mycont addmargin">
+    <p class="topshow ">Add TV Shows</p>
+    <hr>
+    <form>
+      <div class="form-group">
+        <label for="Name"><b>Name</b></label>
+        <input type="text" class="addcontrol" name="Name" id="Name" placeholder="Enter TV Show Name">
+      </div>
+
+      <p id="print"></p>
+
+      <button type="button" class="btn btn-primary addbtn" onclick="myFunction(Name.value)">Add</button>
+    </form>
+  </div>
+
+</section>
+<script>
+  function myFunction(add) {
+  var letters = /^[A-Za-z]+$/;
+  if(add[0].match(letters)){
+  document.getElementById('print').style.color = 'green';
+  document.getElementById('print').innerHTML = add + " has been added";
+  console.log(add)
+  }
+  else {
+  document.getElementById('print').style.color = 'red';
+  document.getElementById('print').innerHTML = "Invalid TV Show Name";
+  }
+  }
+          </script>
+
+</body>
+</html>
